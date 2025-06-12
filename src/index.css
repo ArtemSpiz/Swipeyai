@@ -1,6 +1,8 @@
 body {
 	margin: 0;
-	background: linear-gradient(143deg, #4e283c 37.31%, #271a2b 112.95%);
+	background-image: url('./assets/img/Back.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 
 img {
