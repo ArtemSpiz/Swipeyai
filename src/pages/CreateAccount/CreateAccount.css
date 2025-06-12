@@ -1,0 +1,328 @@
+.createAccount {
+	background-image: url('../../assets/img/signBg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.createRightImage {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.createRightImage {
+	width: 538px;
+	height: 600px;
+	flex-shrink: 0;
+	aspect-ratio: 538/777;
+	z-index: -1;
+}
+
+.createLeftImg {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+}
+
+.createLeftImage {
+	width: 648.198px;
+	flex-shrink: 0;
+	aspect-ratio: 648.2/648.2;
+}
+
+.wrapperSign {
+	position: relative;
+	padding: 40px 64px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	border: 1px solid #463046;
+	background: #322636;
+	flex-shrink: 0;
+}
+
+.cross {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	background: #77717e;
+	padding: 4px;
+	border-radius: 100%;
+	cursor: pointer;
+}
+
+.createWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.createText {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	justify-content: center;
+	align-items: center;
+}
+
+.createTitle {
+	color: #fff;
+	font-family: Poppins;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 120%; /* 33.6px */
+	text-transform: capitalize;
+}
+
+.createSubtitles {
+	color: #fff;
+	font-family: Poppins;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 120%; /* 19.2px */
+	text-transform: capitalize;
+	display: flex;
+	gap: 4px;
+	align-self: stretch;
+}
+
+.coin {
+	width: 20px;
+	height: 20px;
+}
+
+.createSteps {
+	color: #8b8f9c;
+	font-family: Poppins;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 120%; /* 14.4px */
+}
+
+.createButtons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	width: 100%;
+}
+
+.createEmail {
+	border-radius: 18px;
+	border: 1px solid #432e43;
+	background: #271a2b;
+	color: #8b8f9c;
+	font-family: Poppins;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 120%; /* 14.4px */
+	flex-shrink: 0;
+	padding: 16px;
+
+	width: -webkit-fill-available;
+}
+
+.createEmail.invalid {
+	border: 1px solid red;
+	color: red;
+}
+
+.createPasswordWrapper {
+	padding: 16px;
+	width: -webkit-fill-available;
+	border-radius: 18px;
+	border: 1px solid #432e43;
+	background: #271a2b;
+	display: flex;
+	position: relative;
+}
+
+.createPassword {
+	border: none;
+	outline: none;
+	color: #8b8f9c;
+	font-family: Poppins;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 120%; /* 14.4px */
+	flex-shrink: 0;
+	width: 100%;
+	background: none;
+}
+
+.eye {
+	position: absolute;
+	right: 16px;
+	cursor: pointer;
+}
+
+.createBtn {
+	height: 44px;
+	flex-shrink: 0;
+	border-radius: 18px;
+	background: linear-gradient(
+		91deg,
+		#e17f32 0.76%,
+		#e8609f 47.99%,
+		#894bec 100%
+	);
+	box-shadow: 0px 4px 16.8px 0px rgba(240, 73, 243, 0.47);
+	color: #fff;
+	text-align: center;
+	font-family: Poppins;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 100%; /* 12px */
+	letter-spacing: -0.24px;
+	width: 100%;
+	border: none;
+	cursor: pointer;
+}
+
+.createTermOfService {
+	color: #e0dff5;
+	font-family: Poppins;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 120%; /* 12px */
+	display: flex;
+	gap: 2px;
+}
+
+.createTermOfService2 {
+	color: #d7558d;
+}
+
+.createLogIn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.createAsk {
+	color: #8b8f9c;
+	font-family: Poppins;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 120%; /* 12px */
+}
+
+.createLogInBtn {
+	color: #e0dff5;
+	font-family: Poppins;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 120%; /* 12px */
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	gap: 2px;
+}
+
+@media (max-width: 1300px) {
+	.createLeftImage {
+		width: 450px;
+	}
+	.createRightImage {
+		width: 350px;
+		height: 400px;
+	}
+}
+
+@media (max-width: 1100px) {
+	.createLeftImage {
+		width: 400px;
+	}
+	.createRightImage {
+		width: 300px;
+		height: 350px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.createAccount {
+		justify-content: start;
+		padding-top: 32px;
+	}
+
+	.createTitle {
+		font-size: 26px;
+	}
+	.createWrapper {
+		gap: 16px;
+	}
+}
+
+@media (max-width: 640px) {
+	.createLeftImage {
+		width: 271.007px;
+		height: 271.007px;
+
+		flex-shrink: 0;
+		aspect-ratio: 271.01/271.01;
+	}
+
+	.createRightImage {
+		left: -18px;
+		width: 229px;
+		height: 259px;
+		flex-shrink: 0;
+		aspect-ratio: 229/259;
+	}
+
+	.createAccount {
+		height: 100%;
+		gap: 46px;
+		background: none;
+	}
+
+	.createImages {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.createRightImg,
+	.createLeftImg {
+		position: relative;
+	}
+
+	.createTitle {
+		font-size: 22px;
+	}
+
+	.createSubtitles {
+		font-size: 14px;
+	}
+
+	.wrapperSign {
+		padding: 32px 10px;
+		border-radius: 15px;
+	}
+
+	.cross {
+		top: 12px;
+		right: 12px;
+	}
+}

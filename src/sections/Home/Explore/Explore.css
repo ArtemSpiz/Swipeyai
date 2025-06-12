@@ -1,0 +1,180 @@
+.explore {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 45px;
+}
+
+.exploreTitle {
+	color: #fff;
+	font-family: Poppins;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 100%;
+	letter-spacing: -0.56px;
+}
+
+.exploreTitle2 {
+	background: linear-gradient(91deg, #9652bf 0.74%, #fe6283 50.81%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.exploreGirlsCard {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+.girlCard {
+	height: 419px;
+	flex-shrink: 0;
+	aspect-ratio: 253/419;
+	align-items: end;
+	position: relative;
+	background-repeat: no-repeat;
+	border-radius: 10px;
+	background-size: 100% 100%;
+	display: flex;
+}
+
+.girlCardFire {
+	position: absolute;
+	top: 13px;
+	left: 12px;
+	background-image: url('../../../assets/img/rectangle.png');
+	background-repeat: no-repeat;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	background-size: 100% 100%;
+	width: 38px;
+	height: 38px;
+	flex-shrink: 0;
+	padding: 9px;
+}
+
+.fire {
+	box-sizing: border-box;
+
+	width: 20px;
+	height: 20px;
+	flex-shrink: 0;
+}
+
+.girlInfo {
+	display: inline-flex;
+	align-items: flex-start;
+	gap: 8px;
+	padding: 25px 24px;
+}
+
+.girlText {
+	display: flex;
+	gap: 4px;
+}
+
+.girlName {
+	color: #fff;
+	text-align: center;
+	font-family: Poppins;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 100%; /* 16px */
+	letter-spacing: -0.32px;
+}
+
+.girlAge {
+	color: #afafaf;
+	font-family: Poppins;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 100%;
+	letter-spacing: -0.32px;
+}
+
+.checkMark {
+	width: 16px;
+	height: 16px;
+}
+
+@media (max-width: 1300px) {
+	.exploreGirlsCard {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.explore {
+		gap: 40px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.girlInfo {
+		padding: 20px;
+	}
+	.girlCard {
+		height: 350px;
+	}
+	.explore {
+		gap: 35px;
+	}
+}
+
+@media (max-width: 768px) {
+	.girlInfo {
+		padding: 16px;
+	}
+	.exploreTitle {
+		font-size: 25px;
+	}
+	.exploreGirlsCard {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 13px;
+	}
+
+	.girlCard {
+		height: 400px;
+	}
+
+	.explore {
+		gap: 32px;
+	}
+}
+
+@media (max-width: 640px) {
+	.exploreTitle {
+		font-size: 20px;
+	}
+	.girlCard {
+		height: 273px;
+	}
+
+	.girlCardFire {
+		padding: 6px;
+		width: 24px;
+		height: 24px;
+		flex-shrink: 0;
+		top: 12px;
+		left: 12px;
+	}
+
+	.fire {
+		width: 14px;
+		height: 14px;
+	}
+
+	.girlName {
+		font-size: 14px;
+	}
+
+	.girlAge {
+		font-size: 14px;
+	}
+}

@@ -1,0 +1,159 @@
+.hero {
+	background-image: url('../../../assets/img/bgHero.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 32px;
+}
+
+.heroImage {
+	width: 242px;
+	height: 342px;
+	aspect-ratio: 121/171;
+}
+
+.heroRight {
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	align-items: start;
+}
+
+.heroRightTop {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	align-items: start;
+}
+
+.heroSubtitle {
+	display: inline-flex;
+	padding: 8px 14px;
+	align-items: center;
+	gap: 6px;
+	border-radius: 100px;
+	border: 1px solid #e87b47;
+	background: linear-gradient(90deg, #613638 0%, #442765 100%);
+	box-shadow: 0px 4px 8.4px 0px rgba(115, 107, 234, 0.29);
+	color: #fff;
+	text-align: center;
+	font-family: Poppins;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 100%; /* 12px */
+	letter-spacing: -0.24px;
+}
+
+.heroTitle {
+	color: #fff;
+	font-family: Anton;
+	font-size: 50px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 120%; /* 60px */
+	letter-spacing: 1px;
+	width: 373px;
+}
+
+.heroBtn {
+	border-radius: 10px;
+	background: linear-gradient(91deg, #b04cef 0.76%, #8249f3 100%);
+	box-shadow: 0px 4px 15.2px 0px rgba(116, 73, 243, 0.47);
+	padding: 14px 48px;
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	color: #fff;
+	text-align: center;
+	font-family: Poppins;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 100%; /* 12px */
+	letter-spacing: -0.24px;
+	border: none;
+	cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+	.heroTitle {
+		font-size: 45px;
+		width: 300px;
+	}
+}
+
+@media (max-width: 768px) {
+	.heroImage {
+		width: 200px;
+		height: 255px;
+		flex-shrink: 0;
+		aspect-ratio: 135/191;
+	}
+
+	.heroTitle {
+		font-size: 40px;
+		width: 250px;
+	}
+
+	.heroSubtitle {
+		font-size: 10px;
+	}
+
+	.heroBtn {
+		padding: 14px 30px;
+	}
+
+	.HeroPencil {
+		width: 14px;
+		width: 14px;
+	}
+}
+
+@media (max-width: 640px) {
+	.heroImage {
+		width: 135px;
+		height: 191px;
+		flex-shrink: 0;
+		aspect-ratio: 135/191;
+	}
+
+	.hero {
+		gap: 10px;
+		align-items: end;
+		height: 215.637px;
+		justify-content: start;
+		overflow: hidden;
+	}
+
+	.heroSubtitle {
+		padding: 6px 12px;
+	}
+
+	.heroTitle {
+		font-size: 32px;
+		width: 170px;
+	}
+
+	.heroRight {
+		gap: 16px;
+		height: 100%;
+	}
+
+	.heroRightTop {
+		gap: 12px;
+	}
+
+	.heroBtn {
+		padding: 10px 20px;
+	}
+
+	.HeroPencil {
+		width: 12px;
+		height: 12px;
+	}
+}
