@@ -84,9 +84,9 @@ function LogIn() {
 								</a>
 							</div>
 
-							<button className='logInBtn' onClick={handleNextStep}>
+							<a className='logInBtn' onClick={handleNextStep}>
 								Log In
-							</button>
+							</a>
 
 							<div className='logInLogIn'>
 								<div className='logInAsk'>Don’t have an account yet?</div>

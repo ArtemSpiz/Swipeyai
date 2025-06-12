@@ -63,12 +63,12 @@ function ResetPassword() {
 							/>
 
 							<div className='resetPasButtons'>
-								<button className='resetPasBtnSend' onClick={handleNextStep}>
+								<abbr className='resetPasBtnSend' onClick={handleNextStep}>
 									Send
-								</button>
-								<button className='resetPasBtnBack' onClick={navigateLogIn}>
+								</abbr>
+								<a className='resetPasBtnBack' onClick={navigateLogIn}>
 									Back to Log In
-								</button>
+								</a>
 							</div>
 						</div>
 					</div>

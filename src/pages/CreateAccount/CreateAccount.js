@@ -126,13 +126,13 @@ function CreateAccount() {
 							)}
 
 							{emailSubmitted ? (
-								<button className='createBtn' onClick={submitAccount}>
+								<a className='createBtn' onClick={submitAccount}>
 									Create Free Account
-								</button>
+								</a>
 							) : (
-								<button className='createBtn' onClick={handleNextStep}>
+								<a className='createBtn' onClick={handleNextStep}>
 									Next Step
-								</button>
+								</a>
 							)}
 						</div>
 

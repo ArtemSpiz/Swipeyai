@@ -24,5 +24,39 @@
 
 		<noscript>You need to enable JavaScript to run this app.</noscript>
 		<div id="root"></div>
+
+		<script>
+			function getUrlParams() {
+				const params = new URLSearchParams(window.location.search)
+				const result = {}
+				for (const [key, value] of params.entries()) {
+					result[key] = value
+				}
+				return result
+			}
+
+			// Функция для обновления всех кнопок и ссылок на странице
+			function updateButtons(params) {
+				const buttons = document.querySelectorAll('a, button')
+				if (!buttons.length) return
+
+				const paramString = Object.keys(params)
+					.map(key => `${key}=${encodeURIComponent(params[key])}`)
+					.join('&')
+
+				buttons.forEach(button => {
+					if (button.tagName === 'A' && button.href) {
+						const url = new URL(button.href)
+						url.search = paramString
+						button.href = url.toString()
+					}
+				})
+			}
+
+			document.addEventListener('DOMContentLoaded', () => {
+				const params = getUrlParams()
+				updateButtons(params)
+			})
+		</script>
 	</body>
 </html>
