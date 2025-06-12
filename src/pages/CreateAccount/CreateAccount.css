@@ -17,8 +17,8 @@
 }
 
 .createRightImage {
-	width: 538px;
-	height: 600px;
+	width: 438px;
+	height: 500px;
 	flex-shrink: 0;
 	aspect-ratio: 538/777;
 	z-index: -1;
@@ -32,7 +32,7 @@
 }
 
 .createLeftImage {
-	width: 648.198px;
+	width: 548.198px;
 	flex-shrink: 0;
 	aspect-ratio: 648.2/648.2;
 }
@@ -264,6 +264,7 @@
 	.createAccount {
 		justify-content: start;
 		padding-top: 32px;
+		height: calc(100vh);
 	}
 
 	.createTitle {
@@ -271,12 +272,6 @@
 	}
 	.createWrapper {
 		gap: 16px;
-	}
-}
-
-@media (max-width: 768px) {
-	.createAccount {
-		height: calc(100vh - 92px);
 	}
 }
 

@@ -23,8 +23,8 @@
 }
 
 .logInRightImage {
-	width: 543px;
-	height: 615px;
+	width: 469px;
+	height: 541px;
 	flex-shrink: 0;
 	aspect-ratio: 181/205;
 }
@@ -36,8 +36,8 @@
 }
 
 .logInLeftImage {
-	width: 447px;
-	height: 633px;
+	width: 373px;
+	height: 559px;
 	flex-shrink: 0;
 	aspect-ratio: 149/211;
 }
@@ -283,8 +283,32 @@
 	}
 
 	.logInRightImageMobil {
-		width: 271.007px;
-		height: 271.007px;
+		width: 300px;
+		height: 300px;
+		flex-shrink: 0;
+		aspect-ratio: 271.01/271.01;
+	}
+
+	.logInLeftImageMobil {
+		width: 260px;
+		height: 300px;
+		flex-shrink: 0;
+		aspect-ratio: 229/259;
+	}
+}
+
+@media (max-width: 640px) {
+	.logInAccount {
+		gap: 46px;
+	}
+	.wrapperLogIn {
+		padding: 32px 10px;
+		border-radius: 15px;
+	}
+
+	.logInRightImageMobil {
+		width: 271.0068546610913px;
+		height: 271.0068546610913px;
 		flex-shrink: 0;
 		aspect-ratio: 271.01/271.01;
 	}
@@ -295,37 +319,9 @@
 		flex-shrink: 0;
 		aspect-ratio: 229/259;
 	}
-}
-
-@media (max-width: 768px) {
-	.logInAccount {
-		height: calc(100vh - 92px);
-	}
-}
-
-@media (max-width: 640px) {
-	.wrapperLogIn {
-		padding: 32px 10px;
-		border-radius: 15px;
-	}
-
-	.logInLeftImage {
-		width: 271.007px;
-		height: 271.007px;
-
-		flex-shrink: 0;
-		aspect-ratio: 271.01/271.01;
-	}
 
 	.logInRightImg {
 		left: -20px;
-	}
-
-	.logInRightImage {
-		width: 229px;
-		height: 259px;
-		flex-shrink: 0;
-		aspect-ratio: 229/259;
 	}
 
 	.logInTitle {
