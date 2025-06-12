@@ -7,7 +7,7 @@
 	position: relative;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: calc(100vh - 74px);
 }
 
 .createRightImage {
@@ -271,6 +271,12 @@
 	}
 	.createWrapper {
 		gap: 16px;
+	}
+}
+
+@media (max-width: 768px) {
+	.createAccount {
+		height: calc(100vh - 92px);
 	}
 }
 

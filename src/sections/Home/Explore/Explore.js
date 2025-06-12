@@ -1,7 +1,6 @@
 import './Explore.css'
 import checkMark from '../../../assets/img/checkMark.png'
 import Fire from '../../../assets/img/fire.png'
-
 import girlImg1 from '../../../assets/img/girlImage1.png'
 import girlImg2 from '../../../assets/img/girlImage2.png'
 import girlImg3 from '../../../assets/img/girlImage3.png'
@@ -14,6 +13,8 @@ import girlImg9 from '../../../assets/img/girlImage9.png'
 import girlImg10 from '../../../assets/img/girlImage10.png'
 import girlImg11 from '../../../assets/img/girlImage11.png'
 import girlImg12 from '../../../assets/img/girlImage12.png'
+
+import { useNavigate } from 'react-router-dom'
 
 const girlsCard = [
 	{
@@ -91,6 +92,11 @@ const girlsCard = [
 ]
 
 function Explore() {
+	const navigate = useNavigate()
+
+	const handleClick = () => {
+		navigate('/sign-up')
+	}
 	return (
 		<>
 			<div className='explore'>
@@ -104,6 +110,7 @@ function Explore() {
 							key={index}
 							style={{ backgroundImage: `url(${girl.image})` }}
 							className='girlCard'
+							onClick={handleClick}
 						>
 							<div className='girlCardFire'>
 								<img src={Fire} alt='fire' className='fire' />
