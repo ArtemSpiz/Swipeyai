@@ -30,9 +30,49 @@ function ResetPassword() {
 	const handleNextStep = () => {
 		if (validateEmail(email)) {
 			setIsEmailValid(true)
-			setEmailSubmitted(true)
+			submitAccount()
 		} else {
 			setIsEmailValid(false)
+		}
+	}
+
+	const getClickIdFromCookies = () => {
+		const match = document.cookie.match(/rtkclickid-store=([^;]+)/)
+		return match ? match[1] : null
+	}
+
+	const submitAccount = async () => {
+		const clickId = getClickIdFromCookies()
+		if (!clickId) {
+			alert('Click ID not found in cookies.')
+			return
+		}
+
+		try {
+			const response = await fetch('https://swipey.ai/api/v1/auth/pre-lander', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'x-api-key': '3b6b40c8-8b6d-4094-8e67-93fc80ae99cb',
+				},
+				body: JSON.stringify({
+					email,
+					clickId,
+				}),
+			})
+
+			const data = await response.json()
+
+			if (data.success && data.loginUrl) {
+				const utmParams = new URLSearchParams(window.location.search)
+				const redirectUrl = data.loginUrl + '&' + utmParams.toString()
+				window.location.href = redirectUrl
+			} else {
+				alert(data.message || 'Something went wrong.')
+			}
+		} catch (error) {
+			console.error('API error:', error)
+			alert('Failed to create account.')
 		}
 	}
 
