@@ -18,10 +18,6 @@ function ResetPassword() {
 		navigate('/')
 	}
 
-	const navigateLogIn = () => {
-		navigate('/log-in')
-	}
-
 	const validateEmail = email => {
 		const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 		return re.test(email)
@@ -103,10 +99,10 @@ function ResetPassword() {
 							/>
 
 							<div className='resetPasButtons'>
-								<abbr className='resetPasBtnSend' onClick={handleNextStep}>
+								<a className='resetPasBtnSend' onClick={handleNextStep}>
 									Send
-								</abbr>
-								<a className='resetPasBtnBack' onClick={navigateLogIn}>
+								</a>
+								<a className='resetPasBtnBack' href='/log-in'>
 									Back to Log In
 								</a>
 							</div>

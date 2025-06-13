@@ -22,7 +22,7 @@ function Hero() {
 						</div>
 						<div className='heroTitle'>CREATE YOUR OWN AI SLUT</div>
 					</div>
-					<a className='heroBtn' onClick={handleClick}>
+					<a className='heroBtn' href='/sign-up'>
 						<HeroPencil className='HeroPencil' />
 						Create My AI
 					</a>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './CreateAccount.css'
 import createRight from '../../assets/img/createRight.png'
 import createLeft from '../../assets/img/createLeft.png'
@@ -53,6 +53,8 @@ function CreateAccount() {
 			return
 		}
 
+		const utmData = JSON.parse(localStorage.getItem('utm_data') || '{}')
+
 		try {
 			const response = await fetch('https://swipey.ai/api/v1/auth/pre-lander', {
 				method: 'POST',
@@ -64,15 +66,20 @@ function CreateAccount() {
 					email,
 					password,
 					clickId,
+					...utmData,
 				}),
 			})
 
 			const data = await response.json()
 
 			if (data.success && data.loginUrl) {
-				const utmParams = new URLSearchParams(window.location.search)
-				const redirectUrl = data.loginUrl + '&' + utmParams.toString()
-				window.location.href = redirectUrl
+				const redirectUrl = new URL(data.loginUrl)
+
+				for (const [key, value] of Object.entries(utmData)) {
+					redirectUrl.searchParams.set(key, value)
+				}
+
+				window.location.href = redirectUrl.toString()
 			} else {
 				alert(data.message || 'Something went wrong.')
 			}
@@ -86,7 +93,9 @@ function CreateAccount() {
 		<>
 			<div className='createAccount'>
 				<div className='wrapperSign'>
-					<Cross className='cross' onClick={handleClick} />
+					<a href='/'>
+						<Cross className='cross' onClick={handleClick} />
+					</a>
 					<div className='createWrapper'>
 						<div className='createText'>
 							<div className='createTitle'>Create your account</div>
@@ -145,7 +154,12 @@ function CreateAccount() {
 
 						<div className='createLogIn'>
 							<div className='createAsk'>Already have an account?</div>
-							<a className='createLogInBtn' href='/log-in'>
+							<a
+								className='createLogInBtn'
+								href='http://swipey.ai/?open_modal=sign-in'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
 								Log in <Arrow />
 							</a>
 						</div>
