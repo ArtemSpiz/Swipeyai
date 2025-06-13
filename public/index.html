@@ -25,113 +25,90 @@
 		<div id="root"></div>
 
 		<script>
-			function getUrlParams() {
-				const params = new URLSearchParams(window.location.search)
-				const result = {}
-				for (const [key, value] of params.entries()) {
-					result[key] = value
-				}
-				return result
-			}
+			;(function () {
+				const currentParams = new URLSearchParams(window.location.search)
+				if ([...currentParams].length === 0) return
+				// если параметров нет — ничего не делаем
 
-			// Function to save UTM and tracking parameters
-			function saveTrackingParams(params) {
-				// Define which parameters to track and save
-				const trackingKeys = [
-					'utm_source',
-					'utm_medium',
-					'utm_campaign',
-					'utm_term',
-					'utm_content',
-					'pubid',
-					'ref_id',
-					'sub4',
-					'sub18',
-					'sub19',
-					'gclid', // Google Click ID
-					'fbclid', // Facebook Click ID
-					'msclkid', // Microsoft Click ID
-				]
+				const links = document.querySelectorAll('a[href]')
 
-				const trackingParams = {}
-				let hasTrackingParams = false
-
-				// Extract only tracking parameters
-				trackingKeys.forEach(key => {
-					if (params[key]) {
-						trackingParams[key] = params[key]
-						hasTrackingParams = true
+				links.forEach(link => {
+					try {
+						const url = new URL(link.href, window.location.origin)
+						currentParams.forEach((value, key) => {
+							url.searchParams.set(key, value)
+							// заменит, если параметр уже есть
+						})
+						link.href = url.toString()
+					} catch (e) {
+						console.warn(`Невалидный URL: ${link.href}`)
 					}
 				})
+			})()
+		</script>
+		<script>
+			let params = new URLSearchParams(document.location.search)
 
-				if (hasTrackingParams) {
-					// Save to localStorage (persists across browser sessions)
-					localStorage.setItem('trackingParams', JSON.stringify(trackingParams))
+			const xhr = new XMLHttpRequest()
 
-					// Save to sessionStorage (persists for current session)
-					sessionStorage.setItem(
-						'trackingParams',
-						JSON.stringify(trackingParams)
-					)
+			var form = document.getElementById('email-form')
+			var responseJSON
 
-					// Save with timestamp for analytics
-					const trackingData = {
-						params: trackingParams,
-						timestamp: new Date().toISOString(),
-						page: window.location.pathname,
-						referrer: document.referrer,
-					}
+			if (typeof rtkClickID == 'undefined') {
+				rtkClickId = 'id' + Date.now()
+			}
 
-					localStorage.setItem('trackingData', JSON.stringify(trackingData))
+			form.setAttribute('onsubmit', 'sendXHR()')
 
-					console.log('Tracking parameters saved:', trackingParams)
+			xhr.open('POST', 'https://swipey.ai/api/v1/auth/pre-lander')
+			xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
+			xhr.setRequestHeader('x-api-key', '9e3132a0-106a-410b-8e3a-c04aa0f298c3')
+
+			const body = {
+				clickId: rtkClickID,
+			}
+
+			xhr.onload = () => {
+				if (xhr.readyState == 4 && xhr.status == 201) {
+					responseJSON = JSON.parse(xhr.response)
+					console.log('Redirect URL:', responseJSON)
+					// 👈 Check what this logs
+					window.location.href = `${
+						responseJSON.loginUrl
+					}&cmpid=${rtkClickID}&pubid=${params.get(
+						'pubid'
+					)}&prelandername=${params.get(
+						'prelandername'
+					)}&utm_source=${params.get('utm_source')}&utm_medium=${params.get(
+						'utm_medium'
+					)}&utm_campaign=${params.get('utm_campaign')}`
+				} else {
+					console.log(`Error: ${xhr.status}`)
 				}
 			}
 
-			// Function to get saved tracking parameters
-			function getSavedTrackingParams() {
-				try {
-					const saved = localStorage.getItem('trackingParams')
-					return saved ? JSON.parse(saved) : {}
-				} catch (error) {
-					console.error('Error loading saved tracking params:', error)
-					return {}
-				}
+			function sendXHR() {
+				body.email = document.getElementById('email').value
+				body.password = document.getElementById('password').value
+				xhr.send(JSON.stringify(body))
+			}
+		</script>
+		<script>
+			var button = document.getElementById('google-sign')
+			var utmObj = {
+				rtkcid: rtkClickID,
+				click_id: rtkClickID,
+				cmpid: rtkClickID,
+				pubid: params.get('pubid'),
+				prelandername: params.get('prelandername'),
+				utm_source: params.get('utm_source'),
+				utm_medium: params.get('utm_medium'),
+				utm_campaign: params.get('utm_campaign'),
 			}
 
-			// Function to update all buttons and links on the page
-			function updateButtons(params) {
-				const buttons = document.querySelectorAll('a, button')
-				if (!buttons.length) return
-
-				// Merge current params with saved params (current params take priority)
-				const savedParams = getSavedTrackingParams()
-				const allParams = { ...savedParams, ...params }
-
-				const paramString = Object.keys(allParams)
-					.map(key => `${key}=${encodeURIComponent(allParams[key])}`)
-					.join('&')
-
-				if (paramString) {
-					buttons.forEach(button => {
-						if (button.tagName === 'A' && button.href) {
-							const url = new URL(button.href)
-							// Only add params to internal links or if href is relative
-							if (
-								url.hostname === window.location.hostname ||
-								button.href.startsWith('/') ||
-								button.href.startsWith('./')
-							) {
-								url.search = paramString
-								button.href = url.toString()
-							}
-						}
-					})
-				}
-			}
-
-			// Make functions available globally for debugging
-			window.getSavedTrackingParams = getSavedTrackingParams
+			button.href =
+				'https://swipey.ai/api/v1/auth/google/login?state=' +
+				JSON.stringify(utmObj)
 		</script>
 
 		<script src="https://rtrk.swipey.club/uniclick.js?attribution=lastpaid&cookiedomain=www.swipeygirlfriend.com&cookieduration=90&defaultcampaignid=684adf7cefc4b9165d7039b0&regviewonce=false"></script>
