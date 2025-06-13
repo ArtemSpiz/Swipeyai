@@ -1,20 +1,26 @@
 import { useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
-function StoreUTM() {
+const Preserver = () => {
+	const location = useLocation()
+	const navigate = useNavigate()
+
 	useEffect(() => {
-		const params = new URLSearchParams(window.location.search)
-		const utmParams = {}
-		for (const [key, value] of params.entries()) {
-			if (key.startsWith('utm_') || key.startsWith('sub') || key === 'ref_id') {
-				utmParams[key] = value
+		const params = new URLSearchParams(location.search)
+
+		const hasUPM = params.has('upm') || params.has('utm_source')
+
+		if (hasUPM) {
+			localStorage.setItem('savedQuery', location.search)
+		} else {
+			const saved = localStorage.getItem('savedQuery')
+			if (saved && location.search === '') {
+				navigate(`${location.pathname}${saved}`, { replace: true })
 			}
 		}
-		if (Object.keys(utmParams).length > 0) {
-			localStorage.setItem('utm_data', JSON.stringify(utmParams))
-		}
-	}, [])
+	}, [location, navigate])
 
 	return null
 }
 
-export default StoreUTM
+export default Preserver

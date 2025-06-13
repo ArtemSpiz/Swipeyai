@@ -4,12 +4,12 @@ import Home from './pages/Home/Home'
 import CreateAccount from './pages/CreateAccount/CreateAccount'
 import LogIn from './pages/LogIn/LogIn'
 import ResetPassword from './pages/ResetPassword/ResetPassword'
-import StoreUTM from './StoreUTM'
+import Preserver from './StoreUTM'
 
 function App() {
 	return (
 		<BrowserRouter>
-			<StoreUTM />
+			<Preserver />
 
 			<div>
 				<Header />

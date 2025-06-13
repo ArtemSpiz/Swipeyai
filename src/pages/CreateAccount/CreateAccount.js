@@ -66,7 +66,6 @@ function CreateAccount() {
 					email,
 					password,
 					clickId,
-					...utmData,
 				}),
 			})
 
@@ -74,10 +73,6 @@ function CreateAccount() {
 
 			if (data.success && data.loginUrl) {
 				const redirectUrl = new URL(data.loginUrl)
-
-				for (const [key, value] of Object.entries(utmData)) {
-					redirectUrl.searchParams.set(key, value)
-				}
 
 				window.location.href = redirectUrl.toString()
 			} else {
