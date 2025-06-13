@@ -53,7 +53,7 @@ function CreateAccount() {
 			return
 		}
 
-		const utmData = JSON.parse(localStorage.getItem('utm_data') || '{}')
+		const utm = JSON.parse(localStorage.getItem('utm_data') || '{}')
 
 		try {
 			const response = await fetch('https://swipey.ai/api/v1/auth/pre-lander', {
@@ -66,6 +66,7 @@ function CreateAccount() {
 					email,
 					password,
 					clickId,
+					...utm,
 				}),
 			})
 
