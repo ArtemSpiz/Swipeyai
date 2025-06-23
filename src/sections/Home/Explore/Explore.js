@@ -113,7 +113,13 @@ function Explore() {
 							onClick={handleClick}
 						>
 							<div className='girlCardFire'>
-								<img src={Fire} alt='fire' className='fire' />
+								<img
+									loading='lazy'
+									decoding='async'
+									src={Fire}
+									alt='fire'
+									className='fire'
+								/>
 							</div>
 
 							<div className='girlInfo'>
@@ -122,7 +128,13 @@ function Explore() {
 									<div className='girlAge'>{girl.age}</div>
 								</div>
 								{girl.checkMark && (
-									<img src={checkMark} alt='verified' className='checkMark' />
+									<img
+										loading='lazy'
+										decoding='async'
+										src={checkMark}
+										alt='verified'
+										className='checkMark'
+									/>
 								)}
 							</div>
 						</div>

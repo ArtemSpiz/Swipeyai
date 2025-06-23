@@ -6,7 +6,7 @@ function Header() {
 		<>
 			<div className='header'>
 				<div className='header-logo'>
-					<img src={logo} alt='logo' />
+					<img src={logo} alt='logo' loading='lazy' decoding='async' />
 				</div>
 			</div>
 		</>

@@ -13,7 +13,7 @@ function Hero() {
 		<>
 			<div className='hero'>
 				<div className='heroImage'>
-					<img src={heroGirl} alt='girl' />
+					<img loading='lazy' decoding='async' src={heroGirl} alt='girl' />
 				</div>
 				<div className='heroRight'>
 					<div className='heroRightTop'>

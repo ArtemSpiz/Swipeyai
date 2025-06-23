@@ -91,7 +91,14 @@ function LogIn() {
 						<div className='logInText'>
 							<div className='logInTitle'>Log In</div>
 							<div className='logInSubtitles'>
-								to <img src={logo} alt='logo' className='logInLogo' />
+								to{' '}
+								<img
+									loading='lazy'
+									decoding='async'
+									src={logo}
+									alt='logo'
+									className='logInLogo'
+								/>
 							</div>
 						</div>
 						<div className='logInContent'>
@@ -140,12 +147,36 @@ function LogIn() {
 				</div>
 				<div className='logInImages'>
 					<div className='logInRightImg'>
-						<img src={logInRight} alt='girl' className='logInRightImage' />
-						<img src={createRight} alt='girl' className='logInLeftImageMobil' />
+						<img
+							loading='lazy'
+							decoding='async'
+							src={logInRight}
+							alt='girl'
+							className='logInRightImage'
+						/>
+						<img
+							loading='lazy'
+							decoding='async'
+							src={createRight}
+							alt='girl'
+							className='logInLeftImageMobil'
+						/>
 					</div>
 					<div className='logInLeftImg'>
-						<img src={logInLeft} alt='girl' className='logInLeftImage' />
-						<img src={createLeft} alt='girl' className='logInRightImageMobil' />
+						<img
+							loading='lazy'
+							decoding='async'
+							src={logInLeft}
+							alt='girl'
+							className='logInLeftImage'
+						/>
+						<img
+							loading='lazy'
+							decoding='async'
+							src={createLeft}
+							alt='girl'
+							className='logInRightImageMobil'
+						/>
 					</div>
 				</div>
 			</div>
