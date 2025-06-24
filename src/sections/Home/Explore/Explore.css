@@ -33,15 +33,23 @@
 
 .girlCard {
 	height: 419px;
+	width: 253px;
+	overflow: hidden;
 	flex-shrink: 0;
-	aspect-ratio: 253/419;
-	align-items: end;
-	position: relative;
-	background-repeat: no-repeat;
 	border-radius: 10px;
 	background-size: 100% 100%;
 	display: flex;
 	cursor: pointer;
+	position: relative;
+}
+
+.girlCardBg {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .girlCardFire {
@@ -70,7 +78,7 @@
 
 .girlInfo {
 	display: inline-flex;
-	align-items: flex-start;
+	align-items: end;
 	gap: 8px;
 	padding: 25px 24px;
 }
@@ -122,6 +130,7 @@
 	}
 	.girlCard {
 		height: 350px;
+		width: 220px;
 	}
 	.explore {
 		gap: 35px;
@@ -142,6 +151,7 @@
 
 	.girlCard {
 		height: 400px;
+		width: 250px;
 	}
 
 	.explore {
@@ -155,6 +165,7 @@
 	}
 	.girlCard {
 		height: 273px;
+		width: 170px;
 	}
 
 	.girlCardFire {

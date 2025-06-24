@@ -107,12 +107,10 @@ function Explore() {
 
 				<div className='exploreGirlsCard'>
 					{girlsCard.map((girl, index) => (
-						<div
-							key={index}
-							style={{ backgroundImage: `url(${girl.image})` }}
-							className='girlCard'
-							onClick={handleClick}
-						>
+						<div key={index} className='girlCard' onClick={handleClick}>
+							<div className='girlCardBg'>
+								<LazyImage src={girl.image} />
+							</div>
 							<div className='girlCardFire'>
 								<LazyImage
 									loading='lazy'
