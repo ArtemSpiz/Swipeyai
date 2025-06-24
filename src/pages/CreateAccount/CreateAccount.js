@@ -7,6 +7,7 @@ import coin from '../../assets/img/coin.png'
 import Arrow from '../../assets/svg/Arrow'
 import Eye from '../../assets/svg/Eye'
 import { useNavigate } from 'react-router-dom'
+import LazyImage from '../../LazyImage'
 
 function CreateAccount() {
 	const navigate = useNavigate()
@@ -97,7 +98,7 @@ function CreateAccount() {
 							<div className='createTitle'>Create your account</div>
 							<div className='createSubtitles'>
 								& Get 20{' '}
-								<img
+								<LazyImage
 									loading='lazy'
 									decoding='async'
 									src={coin}
@@ -171,7 +172,7 @@ function CreateAccount() {
 
 				<div className='createImages'>
 					<div className='createRightImg'>
-						<img
+						<LazyImage
 							loading='lazy'
 							decoding='async'
 							src={createRight}
@@ -180,7 +181,7 @@ function CreateAccount() {
 						/>
 					</div>
 					<div className='createLeftImg'>
-						<img
+						<LazyImage
 							loading='lazy'
 							decoding='async'
 							src={createLeft}

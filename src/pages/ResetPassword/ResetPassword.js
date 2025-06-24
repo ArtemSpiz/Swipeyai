@@ -6,6 +6,7 @@ import logInLeft from '../../assets/img/logInLeft.png'
 import logInRight from '../../assets/img/logInRight.png'
 import Cross from '../../assets/svg/Cross'
 import { useNavigate } from 'react-router-dom'
+import LazyImage from '../../LazyImage'
 
 function ResetPassword() {
 	const navigate = useNavigate()
@@ -111,14 +112,14 @@ function ResetPassword() {
 				</div>
 				<div className='logInImages'>
 					<div className='logInRightImg'>
-						<img
+						<LazyImage
 							loading='lazy'
 							decoding='async'
 							src={logInRight}
 							alt='girl'
 							className='logInRightImage'
 						/>
-						<img
+						<LazyImage
 							loading='lazy'
 							decoding='async'
 							src={createRight}
@@ -127,14 +128,14 @@ function ResetPassword() {
 						/>
 					</div>
 					<div className='logInLeftImg'>
-						<img
+						<LazyImage
 							loading='lazy'
 							decoding='async'
 							src={logInLeft}
 							alt='girl'
 							className='logInLeftImage'
 						/>
-						<img
+						<LazyImage
 							loading='lazy'
 							decoding='async'
 							src={createLeft}

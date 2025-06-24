@@ -15,6 +15,7 @@ import girlImg11 from '../../../assets/img/girlImage11.png'
 import girlImg12 from '../../../assets/img/girlImage12.png'
 
 import { useNavigate } from 'react-router-dom'
+import LazyImage from '../../../LazyImage'
 
 const girlsCard = [
 	{
@@ -113,7 +114,7 @@ function Explore() {
 							onClick={handleClick}
 						>
 							<div className='girlCardFire'>
-								<img
+								<LazyImage
 									loading='lazy'
 									decoding='async'
 									src={Fire}
@@ -128,7 +129,7 @@ function Explore() {
 									<div className='girlAge'>{girl.age}</div>
 								</div>
 								{girl.checkMark && (
-									<img
+									<LazyImage
 										loading='lazy'
 										decoding='async'
 										src={checkMark}

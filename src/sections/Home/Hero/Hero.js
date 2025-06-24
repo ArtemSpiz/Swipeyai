@@ -2,6 +2,7 @@ import './Hero.css'
 import heroGirl from '../../../assets/img/heroGirl.png'
 import { useNavigate } from 'react-router-dom'
 import HeroPencil from '../../../assets/svg/heroPencil'
+import LazyImage from '../../../LazyImage'
 
 function Hero() {
 	const navigate = useNavigate()
@@ -13,7 +14,12 @@ function Hero() {
 		<>
 			<div className='hero'>
 				<div className='heroImage'>
-					<img loading='lazy' decoding='async' src={heroGirl} alt='girl' />
+					<LazyImage
+						loading='lazy'
+						decoding='async'
+						src={heroGirl}
+						alt='girl'
+					/>
 				</div>
 				<div className='heroRight'>
 					<div className='heroRightTop'>

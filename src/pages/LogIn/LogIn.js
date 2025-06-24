@@ -9,6 +9,7 @@ import Arrow from '../../assets/svg/Arrow'
 import Eye from '../../assets/svg/Eye'
 import logo from '../../assets/img/logo.png'
 import { useNavigate } from 'react-router-dom'
+import LazyImage from '../../LazyImage'
 
 function LogIn() {
 	const navigate = useNavigate()
@@ -92,7 +93,7 @@ function LogIn() {
 							<div className='logInTitle'>Log In</div>
 							<div className='logInSubtitles'>
 								to{' '}
-								<img
+								<LazyImage
 									loading='lazy'
 									decoding='async'
 									src={logo}
@@ -147,14 +148,14 @@ function LogIn() {
 				</div>
 				<div className='logInImages'>
 					<div className='logInRightImg'>
-						<img
+						<LazyImage
 							loading='lazy'
 							decoding='async'
 							src={logInRight}
 							alt='girl'
 							className='logInRightImage'
 						/>
-						<img
+						<LazyImage
 							loading='lazy'
 							decoding='async'
 							src={createRight}
@@ -163,14 +164,14 @@ function LogIn() {
 						/>
 					</div>
 					<div className='logInLeftImg'>
-						<img
+						<LazyImage
 							loading='lazy'
 							decoding='async'
 							src={logInLeft}
 							alt='girl'
 							className='logInLeftImage'
 						/>
-						<img
+						<LazyImage
 							loading='lazy'
 							decoding='async'
 							src={createLeft}
