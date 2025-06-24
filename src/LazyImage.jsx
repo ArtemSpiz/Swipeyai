@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import './LazyImage.css'
 
 function LazyImage({ src, alt, className = '' }) {
 	const [isVisible, setIsVisible] = useState(false)
